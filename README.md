@@ -1,5 +1,5 @@
 # tag_old_pages
-Iterates through a wiki looking for pages that heven't been edited in a specified amount of time and tags them with a template.
+Iterates through a wiki looking for pages that have not been edited in a specified amount of time and tags them with a template.
 
 ## Class variables for customization
 ### TEMPLATE
