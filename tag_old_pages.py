@@ -104,8 +104,7 @@ def add_template(pages) -> None:
 
 def main() -> None:
 	"""
-	Driver. Retrieves old pages that haven't been updated in AGE_CAP time and then tags them
-	with TEMPLATE
+	Driver. Retrieves old pages that haven't been updated in AGE_CAP time and then tags them with TEMPLATE
 	"""
 
 	url = get_api_url()
