@@ -1,11 +1,15 @@
 import pywikibot
 import requests
 import datetime
+import urllib3
 
 # Template to append to pages
 TEMPLATE = "{{Update Needed}}"
 # Max time a page can be unedited before being tagged; timedelta object
+# https://docs.python.org/3/library/datetime.html#timedelta-objects for details on working with timedelta objects
 AGE_CAP = datetime.timedelta(days=30)
+
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 
 def get_api_url() -> str:
@@ -24,8 +28,8 @@ def get_old_pages(url, continue_from="") -> "Page Generator":
 	"""
 	Retrieves a Page Generator with all old pages to be tagged
 
-	:param continue_from: String of page title to continue from; defaults to beginning of wiki
 	:param url: String of the path to the API URL of the wiki
+	:param continue_from: String of page title to continue from; defaults to beginning of wiki
 	:return: returns a tuple with a Page Generator and the lowest page title based on alphabetical order
 	"""
 
