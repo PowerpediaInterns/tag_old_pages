@@ -65,7 +65,7 @@ def get_old_pages(url, continue_from="") -> "Page Generator":
 		print("Evaluating '%s' - '%s' with last edit on '%s'" % (page, curr_title, curr_timestamp))
 
 		timestamp_datetime = datetime.datetime.strptime(curr_timestamp, "%Y-%m-%dT%H:%M:%SZ")
-		print("Timestamp retrieved:", timestamp_datetime)
+		print("Timestamp of last edit:", timestamp_datetime)
 
 		difference = current_time - timestamp_datetime
 		print("Amount of time since last edit:", difference)
