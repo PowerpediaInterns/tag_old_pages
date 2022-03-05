@@ -11,6 +11,7 @@ AGE_CAP = datetime.timedelta(days=30)
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
+BATCH_SIZE = 10
 
 def get_api_url() -> str:
 	"""
@@ -41,7 +42,7 @@ def get_old_pages(url, continue_from="") -> "Page Generator":
 		"generator": "allpages",
 		"rvprop": "timestamp",
 		"gapcontinue": continue_from,
-		"gaplimit": 10
+		"gaplimit": BATCH_SIZE
 	}
 
 	session = requests.Session()
